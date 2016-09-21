@@ -13,11 +13,11 @@ type Watcher struct {
 	leader  metadata.Container
 	command []string
 	port    int
-	client  *metadata.Client
+	client  metadata.Client
 	forward *TcpProxy
 }
 
-func New(client *metadata.Client, port int, command []string) *Watcher {
+func New(client metadata.Client, port int, command []string) *Watcher {
 	return &Watcher{
 		command: command,
 		port:    port,
